@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view students</title>
+</head>
+<body>
+<center>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>name:</th>
+            <th>age:</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for s in students %}
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+        </tr>
+        </tbody>
+        <tr>
+        <td>
+        <a href="{% url 'delete' s.id %}">Delete</a>
+            <a href="{% url 'edit' s.id %}">Edit</a>
+        </td>
+            </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
